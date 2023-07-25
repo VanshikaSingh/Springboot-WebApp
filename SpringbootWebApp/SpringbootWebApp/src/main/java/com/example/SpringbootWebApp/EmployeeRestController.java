@@ -34,7 +34,7 @@ public class EmployeeRestController {
 
     public static Employee[] readFile () throws IOException, ParseException {
        JSONParser parser = new JSONParser();
-       JSONArray reader = (JSONArray) parser.parse(new FileReader("Data.json"));
+       JSONArray reader = (JSONArray) parser.parse(new FileReader("C:\\Users\\0B2369649\\Desktop\\Springboot\\Springboot-WebApp\\SpringbootWebApp\\SpringbootWebApp\\Data.json"));
        ArrayList<Employee> allEmployees = new ArrayList<>();
        Employee[] employeeArray = new Employee[((int)reader.stream().count())];
        for (Object o : reader) {
@@ -95,7 +95,6 @@ public class EmployeeRestController {
 
     @GetMapping("/listEmployees/{id}")
     public Employee listEmployeesId(@PathVariable String id, HttpServletResponse response) throws  Exception{
-
         try{
             int parsedString=Integer.parseInt(id);
         }
